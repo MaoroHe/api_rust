@@ -4,8 +4,9 @@ use axum::{Router, Server};
 use axum::routing::get_service;
 use serde::Deserialize;
 use std::net::SocketAddr;
-use tokio::net::TcpListener;
 use tower_http::services::ServeDir;
+
+mod error;
 
 #[derive(Debug, Deserialize)]
 struct HelloParams {
@@ -21,11 +22,9 @@ async fn main() {
         .fallback_service(routes_static());
 
     let addr = SocketAddr::from(([127, 0, 0, 1], 6969));
-    let listener = TcpListener::bind(&addr).await.unwrap();
-    println!("->> Listening on {}", &addr);
+    println!("->> Listening on http://{}", &addr);
     
-    Server::from_tcp(listener)
-        .unwrap()
+    Server::bind(&addr)
         .serve(routes_all.into_make_service())
         .await
         .unwrap();
@@ -39,7 +38,7 @@ fn routes_hello() -> Router {
 }
 
 fn routes_static() -> Router {
-    return Router::new().nest_service("/", get_service(ServeDir::new("./")))
+    Router::new().nest_service("/", get_service(ServeDir::new("./")))
 }
 
 async fn handler_hello(params: Query<HelloParams>) -> impl IntoResponse {
