@@ -6,6 +6,7 @@ use serde::Deserialize;
 use std::net::SocketAddr;
 use tower_http::services::ServeDir;
 
+
 mod error;
 
 #[derive(Debug, Deserialize)]
@@ -30,7 +31,6 @@ async fn main() {
         .unwrap();
 }
 
-// --- Hello handler
 fn routes_hello() -> Router {
     Router::new()
         .route("/hello", get(handler_hello))
