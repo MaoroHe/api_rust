@@ -31,6 +31,7 @@ async fn main() {
 }
 
 // --- Hello handler
+
 fn routes_hello() -> Router {
     Router::new()
         .route("/hello", get(handler_hello))
