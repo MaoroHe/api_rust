@@ -48,8 +48,13 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "axum",
+<<<<<<< HEAD
+=======
+ "diesel",
+>>>>>>> 52f2768ddbc3037d3aaddf60026994f3a8e00e91
  "dotenv",
  "httpc-test",
+ "mysqlclient-sys",
  "serde",
  "serde_json",
  "sqlx",
@@ -66,6 +71,7 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn 2.0.58",
+<<<<<<< HEAD
 ]
 
 [[package]]
@@ -75,6 +81,8 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f28d99ec8bfea296261ca1af174f24225171fea9664ba9003cbebee704810528"
 dependencies = [
  "num-traits",
+=======
+>>>>>>> 52f2768ddbc3037d3aaddf60026994f3a8e00e91
 ]
 
 [[package]]
@@ -333,6 +341,7 @@ dependencies = [
 ]
 
 [[package]]
+<<<<<<< HEAD
 name = "digest"
 version = "0.10.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -342,6 +351,28 @@ dependencies = [
  "const-oid",
  "crypto-common",
  "subtle",
+=======
+name = "diesel"
+version = "1.4.8"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b28135ecf6b7d446b43e27e225622a038cc4e2930a1022f51cdb97ada19b8e4d"
+dependencies = [
+ "bitflags 1.3.2",
+ "byteorder",
+ "diesel_derives",
+ "pq-sys",
+]
+
+[[package]]
+name = "diesel_derives"
+version = "1.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "45f5098f628d02a7a0f68ddba586fb61e80edec3bdc1be3b921f4ceec60858d3"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 1.0.109",
+>>>>>>> 52f2768ddbc3037d3aaddf60026994f3a8e00e91
 ]
 
 [[package]]
@@ -351,6 +382,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "77c90badedccf4105eca100756a0b1289e191f6fcbdadd3cee1d2f614f97da8f"
 
 [[package]]
+<<<<<<< HEAD
 name = "dotenvy"
 version = "0.15.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -366,6 +398,8 @@ dependencies = [
 ]
 
 [[package]]
+=======
+>>>>>>> 52f2768ddbc3037d3aaddf60026994f3a8e00e91
 name = "encoding_rs"
 version = "0.8.34"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -916,6 +950,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "mysqlclient-sys"
+version = "0.2.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f61b381528ba293005c42a409dd73d034508e273bf90481f17ec2e964a6e969b"
+dependencies = [
+ "pkg-config",
+ "vcpkg",
+]
+
+[[package]]
 name = "native-tls"
 version = "0.2.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1175,10 +1219,20 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "439ee305def115ba05938db6eb1644ff94165c5ab5e9420d1c1bcedbba909391"
 
 [[package]]
+<<<<<<< HEAD
 name = "ppv-lite86"
 version = "0.2.17"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5b40af805b3121feab8a3c29f04d8ad262fa8e0561883e7653e024ae4479e6de"
+=======
+name = "pq-sys"
+version = "0.4.8"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "31c0052426df997c0cbd30789eb44ca097e3541717a7b8fa36b1c464ee7edebd"
+dependencies = [
+ "vcpkg",
+]
+>>>>>>> 52f2768ddbc3037d3aaddf60026994f3a8e00e91
 
 [[package]]
 name = "proc-macro2"
@@ -1818,6 +1872,17 @@ name = "subtle"
 version = "2.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "81cdd64d312baedb58e21336b31bc043b77e01cc99033ce76ef539f78e965ebc"
+
+[[package]]
+name = "syn"
+version = "1.0.109"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "72b64191b275b66ffe2469e8af2c1cfe3bafa67b529ead792a6d0160888b4237"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "unicode-ident",
+]
 
 [[package]]
 name = "syn"
